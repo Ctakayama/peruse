@@ -9,6 +9,8 @@
             "dark":"iconmonstr-weather-111.svg",
             "light":"iconmonstr-weather-2.svg",
             "focus":"iconmonstr-glasses-4.svg",
-            "textSize":"iconmonstr-text-3.svg"
+            "textSize":"iconmonstr-text-3.svg",
+            "arrowR":"iconmonstr-arrow-25.svg",
+            "arrowL":"iconmonstr-arrow-64.svg"
     }
 }

@@ -1,10 +1,47 @@
 <html>
 <head>
 	<title>Screen2</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+	</style>
+
+	<link href="/css/introHCI.css" rel="stylesheet">
+	<script src="/js/reader.js"></script>
 </head>
 <body>
-	<div>
-		<p>Welcome to the reader</p>
+	<div class="grid-container">
+		
+		<div class="reader-nav ArrowL"><a href = "reader"><img src = "images/{{icons.[arrowL]}}" alt = "lastPg" width = "50"></a></div>
+		<div class="reader-nav ArrowR"><a href = "reader"><img src = "images/{{icons.[arrowR]}}" alt = "nextPg" width = "50"></a></div>
+		<div class="reader-nav Highlight"> <a href = "reader"><img src = "images/{{icons.[highlight]}}" alt = "highlight" width = "50"><br>auto highlight</a></div>	
+
+		<div class="reader-nav DarkMode"><a href = "reader"><img src = "images/{{icons.[dark]}}" alt = "dark" width = "50"><br>dark mode</a></div>
+		<div class="reader-nav FocusMode"><a href = "reader"><img src = "images/{{icons.[focus]}}" alt = "focus" width = "50"><br>focus mode</a></div>
+		<div class="reader-nav TextSize"><a href = "reader"><img src = "images/{{icons.[textSize]}}" alt = "focus" width = "50"><br>text size</a></div>
+		<div class="ReadingText"><a href = "/"><button class = "reader backBtn btn">E X I T</button></a>
+			<div class = "reader-content">"We've sort of known each other since I was born," he laughed, smiling at me again.
+
+				"How nice." She didn't sound like she thought it was nice at all, and her pale, fishy eyes narrowed.
+
+				"Bella," she called again, watching my face carefully, "I was just saying to Tyler that it was too bad none of the Cullens could come out today. Didn't anyone think to invite them?" Her expression of concern was unconvincing.
+
+				"You mean Dr. Carlisle Cullen's family?" the tall, older boy asked before I could respond, much to Lauren's irritation. He was really closer to a man than a boy, and his voice was very deep.
+
+				"Yes, do you know them?" she asked condescendingly, turning halfway toward him.
+
+				"The Cullens don't come here," he said in a tone that closed the subject, ignoring her question.
+
+				Tyler, trying to win back her attention, asked Lauren's opinion on a CD he held. She was distracted.
+
+				I stared at the deep-voiced boy, taken aback, but he was looking away toward the dark forest behind us. He'd said that the Cullens didn't come here, but his tone had implied something more—that they weren't allowed; they were prohibited. His manner left a strange impression on me, and I tried to ignore it without success.
+			</div>
+		</div>
+		<div class="PageProgress">pg. 3 of 120 (3%)</div>
 	</div>
 </body>
 </html>
