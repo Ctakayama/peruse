@@ -1,12 +1,40 @@
 <html>
 <head>
-	<title>Test Page</title>
+	<title>Screen1</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+	</style>
+	<link href="/css/introHCI.css" rel="stylesheet">
 </head>
 <body>
-	<div>
-		<a href = "confirm"><button>Upload Text</button></a> <br>
-		<a href = "confirm"><button>Paste Text</button></a> <br>
-		<a href = "confirm"><button>Scan Book</button></a>
+	<div class = "nav-options upper"></div>
+	<div class = "nav-options mid">
+		<a href = "confirm">
+			<img src = "images/{{icons.[upload]}}" alt = "upload" height = "130"><br>
+			<span class = "btnLabel">Upload Text</span>
+		</a>
+		<div class="break"></div> 
+		<a href = "confirm">
+			<img src = "images/{{icons.[paste]}}" alt = "paste" height = "130"><br>
+			<span class = "btnLabel">Paste Text</span>
+		</a>
+		<div class="break"></div> 
+		<a href = "confirm">
+			<img src = "images/{{icons.[scan]}}" alt = "scan" height = "130"><br>
+			<span class = "btnLabel">Scan Text</span>
+		</a>
 	</div>
+	<div class = "nav-options lower"></div>
+	<footer>
+		<a href = "settings"><img src = "images/{{icons.[settings]}}" alt = "settings" height = "70"></a>
+		<a href = "help"><img src = "images/{{icons.[help]}}" alt = "help" height = "70"></a>
+	</footer>
+
+	
 </body>
 </html>

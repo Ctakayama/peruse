@@ -1,0 +1,14 @@
+{
+    "icons":{
+            "upload": "iconmonstr-file-2.svg",
+            "paste": "iconmonstr-clipboard-4.svg",
+            "scan": "iconmonstr-barcode-3.svg",
+            "settings":"iconmonstr-gear-2.svg",
+            "help":"iconmonstr-help-4.svg",
+            "highlight":"iconmonstr-pen-8.svg",
+            "dark":"iconmonstr-weather-111.svg",
+            "light":"iconmonstr-weather-2.svg",
+            "focus":"iconmonstr-glasses-4.svg",
+            "textSize":"iconmonstr-text-3.svg"
+    }
+}
