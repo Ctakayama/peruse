@@ -11,6 +11,19 @@
     align-items: center;
 }
 
+.login{
+    width: 330;
+    margin: auto;
+    text-align: center;
+}
+
+.login h2{
+    text-align: left;
+}
+.login br{
+    height: 2;
+}
+
 .upper{
     min-height:5vh;
 }
@@ -46,6 +59,33 @@ footer{
 }
 a{
     color:black;
+}
+h1{
+    text-align: center;
+    font-size:80;
+}
+.container{
+    width: 350px;
+    height: 170px;
+    padding: 30px;
+    background: #ffffff;
+    margin: auto;
+    text-align: center;
+}
+/* 
+.container:hover .highlight{
+    background-position: -100% 0;
+}  */
+#subtitle{
+    font-size: 22;
+}
+.highlight{
+    background: linear-gradient(to right, rgba(255,255,255,0) 50%, rgb(192, 192, 192) 50%);
+    background-size: 200%;
+    background-position: -100% 0;
+    display: inline;
+    transition: .5s background ease-in-out;
+
 }
 
 .grid-container {

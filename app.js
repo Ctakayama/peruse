@@ -37,10 +37,12 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.view);
+app.get('/home', index.viewHome);
 app.get('/help', index.viewHelp);
 app.get('/settings', index.viewSettings);
 app.get('/reader', reader.viewProject);
 app.get('/confirm', confirm.viewProject);
+app.get('/signUp', index.viewsignUp);
 // Example route
 // app.get('/users', user.list);
 
