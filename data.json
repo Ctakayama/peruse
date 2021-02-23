@@ -11,7 +11,8 @@
             "focus":"iconmonstr-glasses-4.svg",
             "textSize":"iconmonstr-text-3.svg",
             "arrowR":"iconmonstr-arrow-25.svg",
-            "arrowL":"iconmonstr-arrow-64.svg"
+            "arrowL":"iconmonstr-arrow-64.svg",
+            "back":"iconmonstr-undo-1.svg"
     },
 
     "text":{

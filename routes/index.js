@@ -2,7 +2,7 @@
 /*
  * GET home page.
  */
-var icons = require('../icons.json');
+var icons = require('../data.json');
 
 exports.view = function(req, res){
   res.render('index', icons);

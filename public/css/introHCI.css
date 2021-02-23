@@ -26,6 +26,15 @@
 
 .upper{
     min-height:5vh;
+
+}
+
+.upper #back{
+    position: absolute;
+    float:left;
+    margin-left:2vh;
+    top:10;
+    left:0;
 }
 
 
@@ -87,7 +96,9 @@ h1{
     transition: .5s background ease-in-out;
 
 }
-
+.login-btn{
+    width: 100%;
+}
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -113,7 +124,7 @@ h1{
   
   .ArrowR { grid-area: ArrowR; padding-top: 27;}
   
-  .Highlight { grid-area: Highlight;}
+  .HighlightMode { grid-area: Highlight;}
   
   .DarkMode { grid-area: DarkMode;}
   
