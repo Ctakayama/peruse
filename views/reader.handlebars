@@ -9,7 +9,7 @@
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 	</style>
-
+	<script src="https://code.jquery.com/jquery.js"></script>
 	<link href="/css/introHCI.css" rel="stylesheet">
 	<script src="/js/reader.js"></script>
 </head>
@@ -18,16 +18,17 @@
 		
 		<div class="reader-nav ArrowL"><img src = "images/{{icons.[arrowL]}}" alt = "lastPg" width = "50"></div>
 		<div class="reader-nav ArrowR"><img src = "images/{{icons.[arrowR]}}" alt = "nextPg" width = "50"></div>
-		<div class="reader-nav HighlightMode"> <img src = "images/{{icons.[highlight]}}" alt = "highlight" width = "50"><br>auto highlight</div>	
+		<div class="reader-nav HighlightMode" id = "High"> <img src = "images/{{icons.[highlight]}}" alt = "highlight" width = "50"><br>auto highlight</div>	
 
 		<div class="reader-nav DarkMode"><img src = "images/{{icons.[dark]}}" alt = "dark" width = "50"><br>dark mode</div>
-		<div class="reader-nav FocusMode"><img src = "images/{{icons.[focus]}}" alt = "focus" width = "50"><br>focus mode</div>
+		<div class="reader-nav FocusMode" id = "Focus"><img src = "images/{{icons.[focus]}}" alt = "focus" width = "50"><br>focus mode</div>
 		<div class="reader-nav TextSize"><img src = "images/{{icons.[textSize]}}" alt = "focus" width = "50"><br>text size</div>
 		<div class="ReadingText"><a href = "home"><button class = "reader backBtn btn">E X I T</button></a>
-			<div class = "reader-content">{{text.[content]}}
+			<div class = "reader-content" ><div id = "readText">{{text.[content]}}</div>
 			</div>
 		</div>
 		<div class="PageProgress">pg. 3 of 120 (3%)</div>
 	</div>
+	
 </body>
 </html>

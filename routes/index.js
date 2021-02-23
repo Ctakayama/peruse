@@ -2,18 +2,18 @@
 /*
  * GET home page.
  */
-var icons = require('../data.json');
+var data = require('../data.json');
 
 exports.view = function(req, res){
-  res.render('index', icons);
+  res.render('index', data);
 };
 
 exports.viewHome = function(req, res){
-  res.render('home', icons);
+  res.render('home', data);
 };
 
 exports.viewsignUp = function(req, res){
-  res.render('signUp', icons);
+  res.render('signUp', data);
 };
 
 exports.viewSettings = function(req, res){

@@ -1,4 +1,4 @@
-var icons = require('../data.json');
+var data = require('../data.json');
 exports.viewProject = function(req, res){
-    res.render('reader', icons);
+    res.render('reader', data);
 };
