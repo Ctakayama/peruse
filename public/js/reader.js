@@ -13,6 +13,12 @@ function initializePage() {
     $("#Focus").click(FocusMode);
     $("#High").click(HighlightMode);
     let el = document.getElementById("High");
+    addContent();
+}
+
+function addContent(){
+    let myContent = document.getElementById("readText");
+    myContent.innerHTML = localStorage.getItem("textContent");
 }
 
 function HighlightMode(e){
@@ -39,9 +45,11 @@ function FocusMode(e){
     let el = document.getElementById("Focus");
     if(el.value == "On"){
         console.log("FocusMode offline")
+        alert("notifications renabled")
         el.value = "Off"
     }else{
         console.log("FocusMode online")
+        alert("notifications silenced")
         el.value = "On"
     }
     

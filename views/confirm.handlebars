@@ -1,12 +1,17 @@
 <html>
 <head>
 	<title>Test Page</title>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/upload.js"></script>
 </head>
 <body>
 	<div>
 		<p>Welcome to confirmation page</p>
-		<a href = "reader"><button>Confirm</button></a> <br>
-		<a href = "/"><button>Cancel</button></a> <br>
+		<input type="text" class="form-control" id="text" placeholder="paste text here" name="text">
+		</div>
+		<a href = "reader" onclick = "pushToJSON()"><button>Confirm</button></a> <br>
+		<button onclick = "history.go(-1)">Cancel</button> <br>
 	</div>
+
 </body>
 </html>
