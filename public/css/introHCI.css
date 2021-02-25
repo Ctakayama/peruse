@@ -137,9 +137,9 @@ h1{
     padding-top: 20;padding-bottom: 10;
  }
   
-  .ArrowL { grid-area: ArrowL; padding-top: 27;}
+  .ArrowL { grid-area: ArrowL;}
   
-  .ArrowR { grid-area: ArrowR; padding-top: 27;}
+  .ArrowR { grid-area: ArrowR;}
   
   .HighlightMode { grid-area: Highlight;}
   
