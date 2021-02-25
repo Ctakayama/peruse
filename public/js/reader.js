@@ -55,3 +55,4 @@ function FocusMode(e){
     
     el.classList.toggle("active");
 }
+

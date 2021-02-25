@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Settings</title>
+	<title>Paste Text</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://code.jquery.com/jquery.js"></script>
@@ -17,25 +17,21 @@
 		<div id = "back">
 			<a onclick = "history.go(-1)"><img src = "images/{{icons.[back]}}" alt = "back" height = "50vh"></a>
 		</div>
-		<h1>Settings</h1>
+		<h1 style = "font-size:40;">Paste Text</h1>
 	</div>
-
 	<div class = "nav-options mid " style ="min-height: 20vh;">
-		<ul style="padding:0">
-		<br>
-		<br>
-		<h2><img src = "images/{{icons.[textSize]}}" alt = "highlight" width = "50"> text size</h2>
-		
-		<div class="slidecontainer">
-			Small <input type="range" min="1" max="100" value="50" class="slider" id="myRange" style = "width: 250"> Large
+		<div>
+		<textarea type="text" class="form-control input-area" id="pasteText" placeholder="paste text here" name="text"></textarea><br>
+		<button class = "btn" onclick = "history.go(-1)">Cancel</button> 
+		<a onclick = "pushToJSON()"><button class = "btn">Upload</button></a>
 		</div>
-		<h2><img src = "images/{{icons.[highlight]}}" alt = "highlight" width = "50"> highlight speed</h2>
-		
-		<div class="slidecontainer">
-			Slow <input type="range" min="1" max="100" value="50" class="slider" id="myRange" style = "width: 250"> Fast
-		</div>
-		</ul>
-
 	</div>
+	
+	<footer>
+		<a href = "settings"><img src = "images/{{icons.[settings]}}" alt = "settings" height = "50vh"></a>
+		<a href = "help"><img src = "images/{{icons.[help]}}" alt = "help" height = "50vh"></a>
+	</footer>
+
+
 </body>
 </html>

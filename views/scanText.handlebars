@@ -1,0 +1,68 @@
+<html>
+<head>
+	<title>Scan Text</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/upload.js"></script>
+	<link href="/css/introHCI.css" rel="stylesheet">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+	</style>
+</head>
+<body>
+	<div class = "nav-options upper">
+		<div id = "back">
+			<a onclick = "history.go(-1)"><img src = "images/{{icons.[back]}}" alt = "back" height = "50vh"></a>
+		</div>
+		<h1 style = "font-size:40;">Scan Text</h1>
+		
+	</div>
+	<div class = "nav-options mid " style ="min-height: 20vh;">
+		<ul style="padding:0">
+		<video id="video" width="310" height="230" autoplay></video> <br>
+		<button id="snap" class = "btn">Scan photo</button> <br>
+		<canvas id="canvas" width="310" height="230">Scanned image will go here</canvas> <br><br>
+		
+		<button class = "btn" onclick = "history.go(-1)">Cancel</button> &nbsp;
+		<a href = "reader"><button class = "btn">Upload</button></a>
+		</ul>
+		<br>
+		
+		</div>
+	</div>
+	
+	
+	<footer >
+		<a href = "settings"><img src = "images/{{icons.[settings]}}" alt = "settings" height = "50vh"></a>
+		<a href = "help"><img src = "images/{{icons.[help]}}" alt = "help" height = "50vh"></a>
+	</footer>
+
+	<script>
+		var canvas = document.getElementById('canvas');
+		var context = canvas.getContext('2d');
+		var video = document.getElementById('video');
+
+
+		context.fillStyle = "blue";
+		context.font = "bold 16px Arial";
+		context.fillText("Result Image", (canvas.width / 2) - 50, (canvas.height / 2) + 8);
+
+		// Get access to the camera!
+		if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+			// Not adding `{ audio: true }` since we only want video now
+			navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+				//video.src = window.URL.createObjectURL(stream);
+				video.srcObject = stream;
+				video.play();
+			});
+		}		
+		// Trigger photo take
+		document.getElementById("snap").addEventListener("click", function() {
+			context.drawImage(video, 0, 0, 310, 230);
+		});
+	</script>
+</body>
+</html>
