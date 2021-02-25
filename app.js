@@ -10,7 +10,6 @@ var handlebars = require('express3-handlebars')
 
 var index = require('./routes/index');
 var reader = require('./routes/reader');
-var confirm = require('./routes/confirm');
 // Example route
 // var user = require('./routes/user');
 
@@ -41,7 +40,9 @@ app.get('/home', index.viewHome);
 app.get('/help', index.viewHelp);
 app.get('/settings', index.viewSettings);
 app.get('/reader', reader.viewProject);
-app.get('/confirm', confirm.viewProject);
+app.get('/pastetext', index.viewPaste);
+app.get('/uploadtext', index.viewUpload);
+app.get('/scan', index.viewScan);
 app.get('/signUp', index.viewsignUp);
 // Example route
 // app.get('/users', user.list);

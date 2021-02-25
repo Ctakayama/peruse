@@ -32,7 +32,9 @@ footer{
     right:0;
 }
 
-
+#pasteText{
+    resize: none;
+}
 
 .break {
     flex-basis: 100%;
@@ -48,6 +50,19 @@ a{
     color:black;
 }
 
+<<<<<<< HEAD
+=======
+.auto-highlight{
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, rgb(132, 255, 179) 50%) !important;
+    background-size: 200% !important;
+    background-position: -100% 0 !important;
+    display: inline !important;
+    transition: 0.5s background linear !important;
+}
+.login-btn{
+    width: 100%;
+}
+>>>>>>> ac35cf55cd4d0d457d20cfbf665972c52c86d74d
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -69,9 +84,9 @@ a{
     padding-top: 20;padding-bottom: 10;
  }
   
-  .ArrowL { grid-area: ArrowL; padding-top: 27;}
+  .ArrowL { grid-area: ArrowL;}
   
-  .ArrowR { grid-area: ArrowR; padding-top: 27;}
+  .ArrowR { grid-area: ArrowR;}
   
   .Highlight { grid-area: Highlight;}
   
@@ -97,6 +112,9 @@ a{
 
 
 
+.clickable:active{
+    background-color: rgb(156, 156, 156) !important;
+}
   .reader-content{
       padding: 70px;
   }
@@ -107,10 +125,21 @@ a{
       margin-right: 25px;
   }
   
+  textarea.form-control{
+      height: 450 !important;
+      width: 300;
+  }
 
 
-@media (orientation: landscape) {
+
+@media screen and (max-height: 400px){
     footer{
+        position:relative;
+    }
+}
+@media screen and (max-width: 480px){
+    footer{
+        margin-top: 10;
         position:relative;
     }
 }

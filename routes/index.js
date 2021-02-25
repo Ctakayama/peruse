@@ -17,9 +17,20 @@ exports.viewsignUp = function(req, res){
 };
 
 exports.viewSettings = function(req, res){
-  res.render('settings');
+  res.render('settings', data);
 };
 
 exports.viewHelp = function(req, res){
-  res.render('help');
+  res.render('help', data);
+};
+
+exports.viewPaste = function(req, res){
+  res.render('pasteText', data);
+};
+
+exports.viewUpload = function(req, res){
+  res.render('uploadText', data);
+};
+exports.viewScan = function(req, res){
+  res.render('scanText', data);
 };
