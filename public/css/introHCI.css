@@ -10,9 +10,38 @@
     justify-content: center;
     align-items: center;
 }
+.unselectable{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.login{
+    width: 330;
+    margin: auto;
+    text-align: center;
+}
+
+.login h2{
+    text-align: left;
+}
+.login br{
+    height: 2;
+}
 
 .upper{
     min-height:5vh;
+
+}
+
+.upper #back{
+    position: absolute;
+    float:left;
+    margin-left:2vh;
+    top:10;
+    left:0;
 }
 
 
@@ -49,9 +78,34 @@ footer{
 a{
     color:black;
 }
+h1{
+    text-align: center;
+    font-size:80;
+}
+.container{
+    width: 350px;
+    height: 170px;
+    padding: 30px;
+    background: #ffffff;
+    margin: auto;
+    text-align: center;
+}
+/* 
+.container:hover .highlight{
+    background-position: -100% 0;
+}  */
+#subtitle{
+    font-size: 22;
+}
+.highlight{
+    background: linear-gradient(to right, rgba(255,255,255,0) 50%, rgb(192, 192, 192) 50%);
+    background-size: 200%;
+    background-position: -100% 0;
+    display: inline;
+    transition: .5s background ease-in-out;
 
-<<<<<<< HEAD
-=======
+}
+
 .auto-highlight{
     background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, rgb(132, 255, 179) 50%) !important;
     background-size: 200% !important;
@@ -62,7 +116,6 @@ a{
 .login-btn{
     width: 100%;
 }
->>>>>>> ac35cf55cd4d0d457d20cfbf665972c52c86d74d
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -88,29 +141,19 @@ a{
   
   .ArrowR { grid-area: ArrowR;}
   
-  .Highlight { grid-area: Highlight;}
+  .HighlightMode { grid-area: Highlight;}
   
   .DarkMode { grid-area: DarkMode;}
-  // Add CSS
-  body {
-    padding: 25px;
-    background-color: white;
-    color: black;
-    font-size: 25px;
-  }
-  // add dark mode class for toggle
-  .dark-mode {
-    background-color: black;
-    color: white;
-  }
-
+  
   .FocusMode { grid-area: FocusMode;}
   
   .TextSize { grid-area: TextSize;}
 
   .PageProgress { grid-area: PageProgress; background-color: rgb(239, 239, 239); text-align: center; line-height: 350%}
 
-
+.active{
+    background-color: rgb(156, 156, 156) !important;
+}
 
 .clickable:active{
     background-color: rgb(156, 156, 156) !important;
