@@ -6,29 +6,42 @@
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	
+	<!-- linking font awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 	</style>
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<link href="/css/introHCI.css" rel="stylesheet">
 	<script src="/js/reader.js"></script>
+
+
 </head>
-<body>
+	
 	<div class="grid-container">
 		
 		<div class="reader-nav ArrowL"><img src = "images/{{icons.[arrowL]}}" alt = "lastPg" width = "50"></div>
 		<div class="reader-nav ArrowR"><img src = "images/{{icons.[arrowR]}}" alt = "nextPg" width = "50"></div>
-		<div class="reader-nav HighlightMode unselectable" id = "High"> <img src = "images/{{icons.[highlight]}}" alt = "highlight" width = "50"><br>auto highlight</div>	
+		<div class="reader-nav HighlightMode unselectable" id = "High"> <img src = "images/{{icons.[highlight]}}" alt = "highlight" width = "50"><br>auto highlight</div>
+		<!-- // Added Light Mode Icon -->
+		<div onclick="test()" id ="light" class="reader-nav LightMode unselectable"><img src = "images/{{icons.[light]}}" alt = "light" width = "50"><br>light mode</div>
+		<div onclick="test()" id="dark" class="reader-nav DarkMode unselectable"><img src = "images/{{icons.[dark]}}" alt = "dark" width = "50"><br>dark mode</div>
+		
+		<!-- <i onclick="test()" id="moon" class="fas fa-moon" style="font-size: 35px; padding-top:30px; background-color: #efefef"></i> -->
+			 
 
-		<div class="reader-nav DarkMode unselectable"><img src = "images/{{icons.[dark]}}" alt = "dark" width = "50"><br>dark mode</div>
+
 		<div class="reader-nav FocusMode unselectable" id = "Focus"><img src = "images/{{icons.[focus]}}" alt = "focus" width = "50"><br>focus mode</div>
 		<div class="reader-nav TextSize unselectable"><img src = "images/{{icons.[textSize]}}" alt = "focus" width = "50"><br>text size</div>
 		<div class="ReadingText"><a href = "home"><button class = "reader backBtn btn">E X I T</button></a>
 			<div class = "reader-content" ><div id = "readText"></div>
+	
 			</div>
 		</div>
 		<div class="PageProgress">pg. 1 of 1 (100%)</div>
 	</div>
-	
+	<script src="../js/darkmode.js"></script>
 </body>
 </html>
