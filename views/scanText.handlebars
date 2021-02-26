@@ -8,6 +8,7 @@
 	<link href="/css/introHCI.css" rel="stylesheet">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<script src="/js/ocrad.js"></script>
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 	</style>
@@ -25,6 +26,7 @@
 		<video id="video" width="310" height="230" autoplay></video> <br>
 		<button id="snap" class = "btn">Scan photo</button> <br>
 		<canvas id="canvas" width="310" height="230">Scanned image will go here</canvas> <br><br>
+		<div id = "preview">Result Text</div>
 		
 		<button class = "btn" onclick = "history.go(-1)">Cancel</button> &nbsp;
 		<a href = "reader" onclick="pushPlaceholder()"><button class = "btn">Upload</button></a>
@@ -44,7 +46,7 @@
 		var canvas = document.getElementById('canvas');
 		var context = canvas.getContext('2d');
 		var video = document.getElementById('video');
-
+		
 
 		context.fillStyle = "blue";
 		context.font = "bold 16px Arial";
@@ -62,6 +64,9 @@
 		// Trigger photo take
 		document.getElementById("snap").addEventListener("click", function() {
 			context.drawImage(video, 0, 0, 310, 230);
+			var parsedText = OCRAD(context);
+			console.log("This is the parsed text: " + parsedText);
+			document.getElementById('preview').innerHTML = "Result Text: "+ parsedText;
 		});
 
 		function pushPlaceholder(){
