@@ -4,13 +4,15 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="/js/upload.js"></script>
 	<link href="/css/introHCI.css" rel="stylesheet">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 	</style>
+
+		
+	<script src="/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div class = "nav-options upper">
@@ -32,8 +34,24 @@
 		<div class="slidecontainer">
 			Slow <input type="range" min="1" max="100" value="50" class="slider" id="myRange" style = "width: 250"> Fast
 		</div>
+		<br>
+		<h2>Account Details</h2>
+	
+		<input class="form-control form-control-lg" type="text" id = "username" placeholder="update email">
+		<br>
+		<input class="form-control form-control-lg" type="text" placeholder="update password">
+		<br>
+		<button class = "btn" onclick = "saveSettings()">Save Settings</button> 
 		</ul>
-
+		
 	</div>
+	{{> popup}}
+	<script>
+		function saveSettings(){
+			$('#experimental-header').html("<h1>Settings Saved</h1>")
+			$('#experimental-body').html("")
+			$('#experimental').modal('show');
+		}
+	</script>
 </body>
 </html>

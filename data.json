@@ -2,7 +2,7 @@
     "icons":{
             "upload": "iconmonstr-file-2.svg",
             "paste": "iconmonstr-clipboard-4.svg",
-            "scan": "iconmonstr-barcode-3.svg",
+            "scan": "iconmonstr-photo-camera-5.svg",
             "settings":"iconmonstr-gear-2.svg",
             "help":"iconmonstr-help-4.svg",
             "highlight":"iconmonstr-pen-8.svg",
@@ -12,7 +12,8 @@
             "textSize":"iconmonstr-text-3.svg",
             "arrowR":"iconmonstr-arrow-25.svg",
             "arrowL":"iconmonstr-arrow-64.svg",
-            "back":"iconmonstr-undo-1.svg"
+            "back":"iconmonstr-undo-1.svg",
+            "logout":"iconmonstr-log-out-18.svg"
     },
 
     "user":[],
@@ -88,6 +89,27 @@
             "name":"help",
             "link":"/help",
             "icon":"iconmonstr-help-4.svg"
+        }
+    ],
+
+    "loadMethods":[
+        {
+            "link":"/uploadText",
+            "icon":"iconmonstr-file-2.svg",
+            "alt":"upload",
+            "label":"Upload Text"
+        },
+        {
+            "link":"/pasteText",
+            "icon":"iconmonstr-clipboard-4.svg",
+            "alt":"paste",
+            "label":"Paste Text"
+        },
+        {
+            "link":"/scan",
+            "icon":"iconmonstr-photo-camera-5.svg",
+            "alt":"scan",
+            "label":"Scan Text"
         }
     ]
 

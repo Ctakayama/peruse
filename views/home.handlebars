@@ -17,8 +17,10 @@
 <body>
 
 	<div class = "nav-options upper">
-		{{> header}}
-
+		<div id = "back">
+			<a href = "/"><img src = "../images/{{icons.[logout]}}" alt = "back" height = "50vh">
+			<p style = "text-align: left;">logout</p></a>
+		</div>
 		{{#each user}}
 		<h1 id = "welcome">Welcome,<br> {{name}}!</h1>
 		{{/each}}
@@ -27,28 +29,16 @@
 	
 
 	<div class = "nav-options mid">
-		
-		<div class = "grow">
-			<a href = "/uploadText">
-				<img src = "../images/{{icons.[upload]}}" alt = "upload" height = "100"><br>
-				<span class = "btnLabel">Upload Text</span>
-			</a>
-		</div>
-		
-		<div class="break"></div> 
-		<div class = "grow">
-		<a href = "/pasteText">
-			<img src = "../images/{{icons.[paste]}}" alt = "paste" height = "100"><br>
-			<span class = "btnLabel">Paste Text</span>
-		</a>
-		</div>
-		<div class="break"></div>
-		<div class = "grow" id = "scan">
-		<a href = "/scan">
-			<img src = "../images/{{icons.[scan]}}" alt = "scan" height = "100"><br>
-			<span class = "btnLabel">Scan Text</span>
-		</a>
-		</div> 
+		{{#each loadMethods}}
+			<div class = "grow" id = "{{alt}}">
+				<a href = "{{link}}">
+					<img src = "../images/{{icon}}" alt = {{alt}} height = "100"><br>
+
+					<span class = "btnLabel">{{label}}</span>
+				</a>
+			</div>
+			<div class="break"></div>
+		{{/each}}
 	</div>
 	<div class = "nav-options lower"></div>
 	{{> footer}}

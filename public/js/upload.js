@@ -54,7 +54,9 @@ function verify() {
     var content = localStorage.getItem("textContent");
     
     if(content.length < 1){
-       
+        $('#experimental-header').html("<h1> No File Chosen</h1>")
+		$('#experimental-body').html("<p>Choose a File before pressing upload.</p>")
+        $('#experimental').modal('show');
     }else{
         window.location.href = "/reader";
     }
