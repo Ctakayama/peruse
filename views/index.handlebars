@@ -23,10 +23,11 @@
 	</div>
 	
 	<div class = "login">
-		<h2>username</h2>
-		<input class="form-control form-control-lg" id = "username" type="text" placeholder="username">
-		<h2>password</h2> 
-		<input class="form-control form-control-lg" type="password" placeholder="password"> 
+		
+		{{#each loginMethod}}
+		<h2>{{label}}</h2>
+		<input class="form-control form-control-lg" id = "{{label}}" type="{{type}}" placeholder="{{label}}">
+		{{/each}}
 		<br>
 		<button class="btn login-btn" type="submit" onclick="enterUser()">log in</button>
 		<hr>

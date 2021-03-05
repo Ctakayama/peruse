@@ -91,6 +91,39 @@
             "icon":"iconmonstr-help-4.svg"
         }
     ],
+    "loginMethod":[
+        {
+            "label": "username",
+            "type": "text"
+        },
+        {
+            "label": "password",
+            "type": "password"
+        }
+    ],
+
+    "signupMethod":[
+        {
+            "label": "full name",
+            "type": "text"
+        },
+        {
+            "label": "username",
+            "type": "text"
+        },
+        {
+            "label": "email",
+            "type": "text"
+        },
+        {
+            "label": "confirm password",
+            "type": "password"
+        },
+        {
+            "label": "password",
+            "type": "password"
+        }
+    ],
 
     "loadMethods":[
         {
@@ -111,6 +144,33 @@
             "alt":"scan",
             "label":"Scan Text"
         }
+    ],
+
+    "settingsReader":[
+        {
+            "label":"Text Size",
+            "icon":"iconmonstr-text-3.svg",
+            "slideL":"Small",
+            "slideR":"Large"
+        },
+        {
+            "label":"Guided Reading Speed",
+            "icon":"iconmonstr-pen-8.svg",
+            "slideL":"Slow",
+            "slideR":"Fast"
+        }
+    ],
+
+    "settingsAccount":[
+        {
+            "label": "update username",
+            "type": "text"
+        },
+        {
+            "label": "update password",
+            "type": "password"
+        }
     ]
+
 
 }

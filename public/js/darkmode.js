@@ -20,7 +20,7 @@ function test() {
 		//document.getElementsById('readText').style.color = "white";
 		label.innerHTML = "dark mode";
 		toggle = false;
-		root.style.setProperty('--highlight-color', "rgb(252, 255, 87)");
+		root.style.setProperty('--highlight-color', "rgb(255 227 29)");
 
 	//dark mode
 	} else {
