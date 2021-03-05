@@ -7,6 +7,7 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
+var data = require('./data.json')
 
 var index = require('./routes/index');
 var reader = require('./routes/reader');
@@ -37,6 +38,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', index.view);
 app.get('/home', index.viewHome);
+app.get('/home/:name', index.viewHomeWName);
 app.get('/help', index.viewHelp);
 app.get('/settings', index.viewSettings);
 app.get('/reader', reader.viewProject);

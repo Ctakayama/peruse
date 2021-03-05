@@ -15,11 +15,80 @@
             "back":"iconmonstr-undo-1.svg"
     },
 
-    "user":{
+    "user":[],
 
-    },
+    "nav-reader":[
+        {
+            "label":"prev pg.",
+            "class":"reader-nav ArrowL clickable unselectable",
+            "id":"pageL",
+            "icon": "iconmonstr-arrow-64.svg",
+            "alt":"lastPg",
+            "onclick":""
+        },
+        {
+            "label":"next pg.",
+            "class":"reader-nav ArrowR clickable unselectable",
+            "id":"pageR",
+            "icon": "iconmonstr-arrow-25.svg",
+            "alt":"nextPg",
+            "onclick":""
+        },
+        {
+            "label":"guided reading",
+            "class":"reader-nav HighlightMode unselectable",
+            "id":"High",
+            "icon": "iconmonstr-pen-8.svg",
+            "alt":"highlight",
+            "onclick":""
+        },
+        {
+            "label":"dark mode",
+            "class":"reader-nav DarkMode unselectable",
+            "id":"dark",
+            "img_id":"DarkThumb",
+            "label_id":"DarkLabel",
+            "icon": "iconmonstr-weather-111.svg",
+            "alt":"dark",
+            "onclick":"test()"
+        },
+        {
+            "label":"focus mode",
+            "class":"reader-nav FocusMode unselectable",
+            "id":"Focus",
+            "icon": "iconmonstr-glasses-4.svg",
+            "alt":"focus",
+            "onclick":""
+        },
+        {
+            "label":"text size",
+            "class":"reader-nav TextSize unselectable",
+            "id":"TextSize",
+            "icon": "iconmonstr-text-3.svg",
+            "alt":"textSize",
+            "onclick":"changeSize()"
+        }
+    ],
 
-    "settings":{
+    "header":[
+        {
+            "name":"back",
+            "link":"history.go(-1)",
+            "icon":"iconmonstr-undo-1.svg"
+        }
+    ],
 
-    }
+    "footer":[
+        {
+            "name":"settings",
+            "link":"/settings",
+            "icon":"iconmonstr-gear-2.svg"
+        },
+        {
+            "name":"help",
+            "link":"/help",
+            "icon":"iconmonstr-help-4.svg"
+        }
+    ]
+
 }

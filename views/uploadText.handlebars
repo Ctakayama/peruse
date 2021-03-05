@@ -8,32 +8,32 @@
 	<link href="/css/introHCI.css" rel="stylesheet">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	
+	<script src="/js/bootstrap.min.js"></script>
+
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 	</style>
 </head>
 <body>
 	<div class = "nav-options upper">
-		<div id = "back">
-			<a onclick = "history.go(-1)"><img src = "images/{{icons.[back]}}" alt = "back" height = "50vh"></a>
-		</div>
+		{{> header}}
 		<h1 style = "font-size:40;">Upload Text</h1>
 	</div>
 	<div class = "nav-options mid " style ="min-height: 20vh;">
 		<div>
 		<input type="file" class="form-control" id="fileText" name="fileText"></textarea><br>
 		<p>accepted file types: .txt</p>
-		Preview: <textarea name="" id = "preview" cols="30" rows="10" style = "resize: none;" readonly></textarea><br> <br>
+		Preview: <textarea name="" id = "preview" cols="30" rows="18" style = "resize: none;" readonly></textarea><br> <br>
 		<button class = "btn" onclick = "history.go(-1)">Cancel</button> 
 		<button class = "btn" onclick="verify()">Upload</button>
 		</div>
 	</div>
 	
 	
-	<footer>
-		<a href = "settings"><img src = "images/{{icons.[settings]}}" alt = "settings" height = "50vh"></a>
-		<a href = "help"><img src = "images/{{icons.[help]}}" alt = "help" height = "50vh"></a>
-	</footer>
+	{{> footer}}
+
+	{{> popup}}
 
 
 </body>

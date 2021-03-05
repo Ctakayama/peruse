@@ -5,12 +5,17 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
     console.log("Javascript Initialized");
+
     init();
 });
 
 
+
 function init(){
-    document.getElementById('fileText').addEventListener('change', handleFileSelect, false);
+    if(document.getElementById('fileText')!=null){
+        document.getElementById('fileText').addEventListener('change', handleFileSelect, false);
+
+    }
     localStorage.setItem('textContent', "");
 }
   
@@ -19,7 +24,9 @@ function handleFileSelect(event){
     var ext = getFile(event.target.files[0].name);
     console.log(ext);
     if(ext != "txt" ){
-        alert("File must be .txt!");
+        $('#experimental-header').html("<h1>Wrong File Format</h1>")
+		$('#experimental-body').html("<p>File must be of type .txt</p>")
+        $('#experimental').modal('show');
         return;
     }
     reader.onload = handleFileLoad;
@@ -47,7 +54,7 @@ function verify() {
     var content = localStorage.getItem("textContent");
     
     if(content.length < 1){
-        alert("pasted text must be at least 1 character");
+       
     }else{
         window.location.href = "/reader";
     }
@@ -57,7 +64,9 @@ function pushToJSON() {
     console.log("Pushing to JSON");
     var textInput = document.getElementById('pasteText').value;
     if(textInput.length < 1){
-        alert("pasted text must be at least 1 character");
+        $('#experimental-header').html("<h1> No Text to Upload</h1>")
+		$('#experimental-body').html("<p>Pasted text must be at least 1 character.</p>")
+        $('#experimental').modal('show');
     }else{
         window.location.href = "/reader";
     }

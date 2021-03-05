@@ -2,6 +2,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
+:root{
+    --highlight-speed:10s;
+    --highlight-color:rgb(252, 255, 87);
+}
+
 .nav-options{
     text-align:center;
      
@@ -31,9 +36,17 @@
     height: 2;
 }
 
+#welcome{
+    width:220px;
+    font-size: 30;
+    font-weight: bold;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
 .upper{
     min-height:5vh;
-
 }
 
 .upper #back{
@@ -44,9 +57,11 @@
     left:0;
 }
 
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
 
 .mid{
-    min-height:85vh;
+    min-height:78vh;
 }
 
 .lower{
@@ -85,8 +100,14 @@ a{
 }
 h1{
     text-align: center;
+    font-weight: bold !important;
     font-size:80;
 }
+
+canvas, video{
+    outline: black 3px solid;
+}
+
 .container{
     width: 350px;
     height: 170px;
@@ -112,11 +133,11 @@ h1{
 }
 
 .auto-highlight{
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, rgb(132, 255, 179) 50%) !important;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 50%, var(--highlight-color) 50%) !important;
     background-size: 200% !important;
     background-position: -100% 0 !important;
     display: inline !important;
-    transition: 0.5s background linear !important;
+    transition: var(--highlight-speed) background linear !important;
 }
 .login-btn{
     width: 100%;
@@ -140,7 +161,9 @@ h1{
  .reader-nav{
     background-color: rgb(239, 239, 239);
     padding-top: 20;padding-bottom: 10;
+    min-height: 110px;
  }
+
   
   .ArrowL { grid-area: ArrowL;}
   
@@ -164,6 +187,7 @@ h1{
     background-color: rgb(156, 156, 156) !important;
 }
   .reader-content{
+      font-size: 20px;
       padding: 70px;
   }
 
@@ -177,6 +201,10 @@ h1{
       height: 450 !important;
       width: 300;
   }
+
+.modal-body, .modal-footer{
+    text-align: center !important;
+}
 
 
 

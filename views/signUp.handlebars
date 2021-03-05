@@ -10,6 +10,7 @@
 		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 	</style>
 	<link href="/css/introHCI.css" rel="stylesheet">
+	<script src="/js/login.js"></script>
 </head>
 <body>
 	<div class = "container">
@@ -21,13 +22,13 @@
 		<h2>sign up</h2>
 
 		<input class="form-control form-control-lg" type="text" placeholder="full name">
-
+		<input class="form-control form-control-lg" type="text" id = "username" placeholder="username">
 		<input class="form-control form-control-lg" type="text" placeholder="email">
 
 		<input class="form-control form-control-lg" type="password" placeholder="password"> 
 		<input class="form-control form-control-lg" type="password" placeholder="confirm password"><br>
 		
-		<a href = "home"><button class="btn login-btn" type="submit">sign up</button></a> <br>
+		<button class="btn login-btn" type="submit" onclick="enterUser()">sign up</button> <br>
 		<hr>
 		<a href = "/">log in instead</a> 
 		

@@ -6,6 +6,8 @@ function test() {
 	var thumbnail = document.getElementById("DarkThumb");
 	var label = document.getElementById("DarkLabel");
 	var el = document.getElementById("dark");
+	let root = document.documentElement;
+
 	
 	el.classList.toggle("active");
 	console.log(label.innerHTML);
@@ -18,6 +20,7 @@ function test() {
 		//document.getElementsById('readText').style.color = "white";
 		label.innerHTML = "dark mode";
 		toggle = false;
+		root.style.setProperty('--highlight-color', "rgb(252, 255, 87)");
 
 	//dark mode
 	} else {
@@ -27,6 +30,7 @@ function test() {
 		//document.getElementsById('readText').style.color = "black";
 		thumbnail.src = "../images/iconmonstr-weather-2.svg";
 		label.innerHTML = "light mode";
+  		root.style.setProperty('--highlight-color', "rgb(114, 116, 47)");
 		toggle = true;
 	}
 }

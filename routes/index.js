@@ -2,6 +2,7 @@
 /*
  * GET home page.
  */
+const { request } = require('express');
 var data = require('../data.json');
 
 exports.view = function(req, res){
@@ -9,6 +10,16 @@ exports.view = function(req, res){
 };
 
 exports.viewHome = function(req, res){
+  res.render('home', data);
+};
+
+exports.viewHomeWName = function(req, res){
+  newUser = {
+    "name":req.params.name
+  };
+  
+  data.user.pop();
+  data.user.push(newUser);
   res.render('home', data);
 };
 

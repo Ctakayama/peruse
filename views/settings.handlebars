@@ -14,9 +14,7 @@
 </head>
 <body>
 	<div class = "nav-options upper">
-		<div id = "back">
-			<a onclick = "history.go(-1)"><img src = "images/{{icons.[back]}}" alt = "back" height = "50vh"></a>
-		</div>
+		{{> header}}
 		<h1>Settings</h1>
 	</div>
 
@@ -24,12 +22,12 @@
 		<ul style="padding:0">
 		<br>
 		<br>
-		<h2><img src = "images/{{icons.[textSize]}}" alt = "highlight" width = "50"> text size</h2>
+		<h2><img src = "images/{{icons.[textSize]}}" alt = "highlight" width = "50"> Text Size</h2>
 		
 		<div class="slidecontainer">
 			Small <input type="range" min="1" max="100" value="50" class="slider" id="myRange" style = "width: 250"> Large
 		</div>
-		<h2><img src = "images/{{icons.[highlight]}}" alt = "highlight" width = "50"> highlight speed</h2>
+		<h2><img src = "images/{{icons.[highlight]}}" alt = "highlight" width = "50"> Guided Reading Speed</h2>
 		
 		<div class="slidecontainer">
 			Slow <input type="range" min="1" max="100" value="50" class="slider" id="myRange" style = "width: 250"> Fast

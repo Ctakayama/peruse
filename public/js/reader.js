@@ -1,4 +1,7 @@
 'use strict';
+var pages = [];
+var currentPg = 0;
+var totalPg = 0;
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
@@ -12,13 +15,74 @@ $(document).ready(function() {
 function initializePage() {
     $("#Focus").click(FocusMode);
     $("#High").click(HighlightMode);
+    $("#pageR").click(NextPg);
+    $("#pageL").click(PrevPg);
     let el = document.getElementById("High");
     addContent();
 }
 
 function addContent(){
-    let myContent = document.getElementById("readText");
-    myContent.innerHTML = localStorage.getItem("textContent");
+  var wc = getWordCount(localStorage.getItem("textContent"));
+  console.log("this many words:" + wc);
+  
+  splitIntoPages(localStorage.getItem("textContent"), wc, 250);
+  let firstPg = pages[currentPg].join(' ');
+  setHighlightSpeed(getWordCount(firstPg));
+  $("#readText").html(firstPg);
+  updatePgCount();
+}
+
+function getWordCount(words){
+  return words.split(' ').length;
+}
+
+function splitIntoPages(text, wc, wpp){
+  const w = text.split(' ');
+  
+  for(let i= 1; i<=Math.ceil(wc/wpp);i++){
+    var page = w.slice(wpp*(i-1), wpp*i)
+    pages.push(page);
+  }
+  console.log(pages);
+}
+
+function updatePgCount(){
+  totalPg = (pages.length-1);
+  $("#pgCount").html("pg. "+(currentPg+1)+ " of " + (totalPg+1) + " ("+percentage(currentPg+1, totalPg+1)+"%)")
+}
+
+function NextPg(){
+  let next = currentPg+1;
+  if(next <= totalPg){
+    currentPg = next;
+    let nextPg = pages[currentPg].join(' ');
+    $("#readText").html(nextPg);
+    updatePgCount();
+    setHighlightSpeed(getWordCount(nextPg));
+  }
+}
+
+function PrevPg(){
+  let prev = currentPg-1;
+  if(prev >= 0){
+    currentPg = prev;
+    let prevPg = pages[currentPg].join(' ');
+    $("#readText").html(prevPg);
+    updatePgCount();
+    setHighlightSpeed(getWordCount(prevPg));
+  }
+}
+
+function percentage(partial, total) {
+  return Math.ceil((100 * partial) / total);
+} 
+
+//increase animation length for each word in the sentence
+function setHighlightSpeed(wc){
+  let speed = 0.3 * wc;
+  console.log("setting speed to: "+ speed);
+  let root = document.documentElement;
+  root.style.setProperty('--highlight-speed', speed+"s");
 }
 
 function HighlightMode(e){
@@ -26,10 +90,8 @@ function HighlightMode(e){
 	e.preventDefault();
     let el = document.getElementById("High");
     if(el.value == "On"){
-        console.log("Highlight offline")
         el.value = "Off"
     }else{
-        console.log(el.value)
         el.value = "On"
     }
     
