@@ -161,7 +161,7 @@ canvas, video, #preview, #pasteText{
     text-align: center;
   }
   
-  .ReadingText { grid-area: ReadingText; }
+  .ReadingText { grid-area: ReadingText; height: 100%;}
   
  .reader-nav{
     background-color: rgb(239, 239, 239);
