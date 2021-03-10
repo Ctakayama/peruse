@@ -18,7 +18,12 @@ function initializePage() {
     $("#pageR").click(NextPg);
     $("#pageL").click(PrevPg);
     let el = document.getElementById("High");
-    wpp = localStorage.getItem("wpp");
+    if(localStorage.getItem("wpp") != null){
+      wpp = localStorage.getItem("wpp");
+    }else{
+      console.log("wpp null, setting to default")
+    }
+    
     addContent();
     
 }
