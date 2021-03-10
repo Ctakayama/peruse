@@ -116,11 +116,11 @@
             "type": "text"
         },
         {
-            "label": "confirm password",
+            "label": "password",
             "type": "password"
         },
         {
-            "label": "password",
+            "label": "confirm password",
             "type": "password"
         }
     ],
@@ -142,17 +142,11 @@
             "link":"/scan",
             "icon":"iconmonstr-photo-camera-5.svg",
             "alt":"scan",
-            "label":"Scan Text"
+            "label":"Image to Text"
         }
     ],
 
     "settingsReader":[
-        {
-            "label":"Text Size",
-            "icon":"iconmonstr-text-3.svg",
-            "slideL":"Small",
-            "slideR":"Large"
-        },
         {
             "label":"Guided Reading Speed",
             "icon":"iconmonstr-pen-8.svg",

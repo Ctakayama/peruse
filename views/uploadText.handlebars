@@ -22,9 +22,11 @@
 	</div>
 	<div class = "nav-options mid " style ="min-height: 20vh;">
 		<div>
-		<input type="file" class="form-control" id="fileText" name="fileText"></textarea><br>
-		<p>accepted file types: .txt</p>
-		Preview: <textarea name="" id = "preview" cols="30" rows="18" style = "resize: none;" readonly></textarea><br> <br>
+		<input type="file" class="form-control" id="fileText" name="fileText" style="display:none;">
+		<button class="btn btn-secondary"><label for="fileText" style="font-weight:normal; margin:auto">Choose File (.txt)</label></button><br><br>
+
+		
+		<textarea name="" id = "preview" cols="40" rows="18" style = "resize: none; color: rgba(85, 85, 85, .8);" readonly>Preview text</textarea><br> <br>
 		<button class = "btn" onclick = "history.go(-1)">Cancel</button> 
 		<button class = "btn" onclick="verify()">Upload</button>
 		</div>

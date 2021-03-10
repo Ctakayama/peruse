@@ -21,9 +21,10 @@ function init(){
   
 function handleFileSelect(event){
     const reader = new FileReader()
-    var ext = getFile(event.target.files[0].name);
+    var ext = ""+getFile(event.target.files[0].name);
+    ext = ext.toUpperCase();
     console.log(ext);
-    if(ext != "txt" ){
+    if(ext != "TXT" ){
         $('#experimental-header').html("<h1>Wrong File Format</h1>")
 		$('#experimental-body').html("<p>File must be of type .txt</p>")
         $('#experimental').modal('show');

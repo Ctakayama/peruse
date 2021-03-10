@@ -11,6 +11,7 @@
 	
 	<script src="/js/bootstrap.min.js"></script>
 
+
 	<script src="/js/ocrad.js"></script>
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
@@ -20,15 +21,19 @@
 
 	<div class = "nav-options upper">
 		{{> header}}
-		<h1 style = "font-size:40;">Scan Text</h1>
+		<h1 style = "font-size:40;">Image2Text</h1>
 		
 	</div>
 	<div class = "nav-options mid " style ="min-height: 20vh;">
 		<ul style="padding:0">
-		<video id="video" width="310" height="230" autoplay></video> <br>
-		<button id="snap" class = "btn btn-success">Scan photo</button> <br>
+		<input type="file" class="form-control" id="imgText" name="imgText" style="display:none;">
+		<button class="btn btn-secondary"><label for="imgText" style="font-weight:normal; margin:auto">Choose File (.png, .gif, .jpg)</label></button><br><br>
+
 		<canvas id="canvas" width="310" height="230">Scanned image will go here</canvas> <br><br>
-		<div id = "preview">Result Text</div>
+
+		<textarea name="" id = "preview" cols="40" rows="10" style = "resize: none; color: rgba(85, 85, 85, .8);">(This Text will be used in the reader, edit it if the translation is inaccurate)
+		</textarea><br> <br>
+
 		
 		<button class = "btn" onclick = "history.go(-1)">Cancel</button> &nbsp;
 		<a  onclick="pushPlaceholder()"><button class = "btn">Upload</button></a>
@@ -53,38 +58,64 @@
 		var canvas = document.getElementById('canvas');
 		var context = canvas.getContext('2d');
 		var video = document.getElementById('video');
+		var imageLoader = document.getElementById('imgText');
+    	imageLoader.addEventListener('change', handleImage, false);
 		var parsedText = ""
+		var hasFile = false
 
 		context.fillStyle = "blue";
 		context.font = "bold 16px Arial";
-		context.fillText("Result Image", (canvas.width / 2) - 50, (canvas.height / 2) + 8);
+		context.fillText("Image Preview", (canvas.width / 2) - 60, (canvas.height / 2) + 8);
 
+		function getFile(filePath) {
+			return filePath.substr(filePath.lastIndexOf('\\') + 1).split('.')[1];
+		}
 
-		// Get access to the camera!
-		if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-			// Not adding `{ audio: true }` since we only want video now
-			navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-				//video.src = window.URL.createObjectURL(stream);
-				video.srcObject = stream;
-				video.play();
-			});
-		}		
-		// Trigger photo take
-		document.getElementById("snap").addEventListener("click", function() {
-			context.drawImage(video, 0, 0, 310, 230);
-			parsedText = OCRAD(context);
+		function handleImage(e){
+			var reader = new FileReader();
+			var ext = ""+getFile(event.target.files[0].name);
+			ext = ext.toUpperCase();
+			console.log(ext);
+			if(ext != "PNG" && ext != "GIF" && ext != "JPG" && ext != "JPEG"){
+				$('#experimental-header').html("<h1>Wrong File Format</h1>")
+				$('#experimental-body').html("<p>File must be of type .png, .gif, or .jpg</p>")
+				$('#experimental').modal('show');
+				return;
+			}else{
+				hasFile = true;
+			}
+			reader.onload = function(event){
+				var img = new Image();
+				img.onload = function(){
+					context.clearRect(0, 0, canvas.width, canvas.height);
+					var rat = Math.min(canvas.width / img.width, canvas.height / img.height);
+					context.drawImage(img, 0, 0, img.width * rat, img.height * rat)
+					var tmp = document.createElement('canvas')
+					tmp.width = img.width;
+					tmp.height = img.height;
+					var ctx = tmp.getContext('2d')
+					ctx.drawImage(img, 0, 0)
+					var image_data = ctx.getImageData(0, 0, tmp.width, tmp.height);
+					parse(image_data);
+				}
+				img.src = event.target.result;
+			}
+			reader.readAsDataURL(e.target.files[0]);
+		}
+
+		function parse(d){
+			parsedText = OCRAD(d);
 			console.log("This is the parsed text: " + parsedText);
-			document.getElementById('preview').innerHTML = "Result Text: "+ parsedText;
-
-		});
+			document.getElementById('preview').value = parsedText;
+		}
 
 		function pushPlaceholder(){
-			console.log("setting placeholder" +parsedText);
-			if(parsedText.length == 0){
+			if(parsedText.length == 0 && hasFile === false){
 				$('#experimental-header').html("<h1> No Text to Upload</h1>")
-				$('#experimental-body').html("<p> Use the Scan Photo button to scan in a photo with text.</p>")
+				$('#experimental-body').html("<p> Upload an image to conert to text.</p>")
 				$('#experimental').modal('show');
 			}else{
+				parsedText = document.getElementById("preview").value;
 				localStorage.setItem('textContent', parsedText);
 				window.location.href = "/reader"
 			}

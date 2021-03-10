@@ -83,6 +83,7 @@ footer{
 #readText{
     word-wrap: break-word !important;
     overflow-wrap: break-word !important;
+    
 }
 
 .break {
@@ -104,9 +105,10 @@ h1{
     font-size:80;
 }
 
-canvas, video{
-    outline: black 3px solid;
+canvas, video, #preview, #pasteText{
+    outline: #555 3px solid;
 }
+
 
 .container{
     width: 350px;
@@ -145,7 +147,7 @@ canvas, video{
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 0.4fr 2.2fr 0.2fr;
+    grid-template-rows: 110px 2.2fr 50px;
     gap: 0px 0px;
     grid-template-areas:
       "ArrowL Highlight DarkMode FocusMode TextSize ArrowR"
@@ -189,6 +191,7 @@ canvas, video{
   .reader-content{
       font-size: 20px;
       padding: 70px;
+      height: 100%;
   }
 
   .reader.backBtn{
@@ -206,6 +209,10 @@ canvas, video{
     text-align: center !important;
 }
 
+.help{
+    color:black !important;
+    font-size: large !important;
+}
 
 
 @media screen and (max-height: 400px){

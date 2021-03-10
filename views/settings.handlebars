@@ -22,16 +22,12 @@
 
 	<div class = "nav-options mid " style ="min-height: 20vh;">
 		<ul style="padding:0">
-		<br>
-		<br>
-		{{#each settingsReader}}
-			<h2><img src = "../images/{{icon}}" alt = "highlight" width = "50"> {{label}}</h2>
-			
-			<div class="slidecontainer">
-				{{slideL}} <input type="range" min="1" max="100" value="50" class="slider" id="myRange" style = "width: 250"> {{slideR}}
-			</div>
-		{{/each}}
-		<br>
+
+		<h2>Word Count Per Page</h2>
+		<i>(Between 50-500 words per page)</i><br>
+		<input type="number" id="wpp" class="form-control" name="wpp" min="50" onchange ="update(this.id)" max="500" step ="50" value="50" style="text-align: center;">
+		
+		<hr>
 		<h2>Account Details</h2>
 		{{#each settingsAccount}}
 			<input class="form-control form-control-lg" type="{{type}}"placeholder="{{label}}">
@@ -44,11 +40,23 @@
 	</div>
 	{{> popup}}
 	<script>
+		function update(id){
+				var value = document.getElementById(id).value;
+				value = Math.min(Math.max(50, value), 500);
+				document.getElementById(id).value = value
+		}
+
+
 		function saveSettings(){
+			var wpp = document.getElementById("wpp").value;
+
 			$('#experimental-header').html("<h1>Settings Saved</h1>")
 			$('#experimental-body').html("")
 			$('#experimental').modal('show');
+			console.log("Saving settings" + wpp);
+			localStorage.setItem("wpp", wpp);
 		}
+		
 	</script>
 </body>
 </html>

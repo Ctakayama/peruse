@@ -8,6 +8,8 @@
 	<link href="/css/introHCI.css" rel="stylesheet">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<script src="/js/bootstrap.min.js"></script>
+
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 	</style>
@@ -15,21 +17,68 @@
 <body>
 	<div class = "nav-options upper">
 		{{> header}}
+		<h1>Confused<br> on how <br><b>Peruse</b> works?</h1> 
 	</div>
 
 
-	<div class = "nav-options mid " style ="min-height: 20vh;">
-		<ol>
-		<h1>Confused on how <b>Peruse</b> works?</h1> 
-		<p>
-			<ol class="list-group">
-				<li class="list-group-item">1. Choose method of uploading text/document/book.</li>
-				<li class="list-group-item">2. Once text is uploaded, customize settings to your own liking. </li>
-				<li class="list-group-item">3. Enjoy your read.</li>
-				<li class="list-group-item">4. Once finished with reading, upload next document.</li>
-			</ol>
-		</p>
-		</ol>
+	<div class = "nav-options mid " style ="min-height: 20vh; display:block; ">
+		<div class="card">
+			<div class="card-header" id="headingOne">
+			<h5 class="mb-0">
+				<button class="btn btn-link help" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+				<i>▼ 1. Choose Method of Uploading Text </i>
+				</button>
+			</h5>
+			</div>
+
+			<div id="collapseOne" class="collapse" aria-labelledby="headingOne">
+			<div class="card-body">
+				<ul style="text-align: left;/* width: 70%; */display: inline-block;margin: auto; list-style-type:none">
+					<li><img src = "../images/{{icons.[upload]}}" height = "50vh"> : Upload a .txt file from your device</li>
+					<li><img src = "../images/{{icons.[paste]}}" height = "50vh"> : Paste text file from your clipboard</li>
+
+					<li><img src = "../images/{{icons.[scan]}}"height = "50vh"> : Convert images (.jpg, .png, .gif) to text</li>
+				</ul>
+			</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="card-header" id="headingTwo">
+			<h5 class="mb-0">
+				<button class="btn btn-link help" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+				<i>▼ 2. Once text is uploaded, <br>customize settings to your own liking.</i>
+				</button>
+			</h5>
+			</div>
+
+			<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
+			<div class="card-body">
+				<ul style="text-align: left;/* width: 70%; */display: inline-block;margin: auto; list-style-type:none">
+					<li><img src = "../images/{{icons.[arrowL]}}" height = "50vh"> : Go back a page</li>
+
+					<li><img src = "../images/{{icons.[arrowR]}}"height = "50vh"> : Go forward a page</li>
+
+					<li><img src = "../images/{{icons.[highlight]}}"height = "50vh"> : Text will highlight itself automatically</li>
+					<li><img src = "../images/{{icons.[dark]}}"height = "50vh"> : Adjust contrast for nighttime reading</li>
+					<li><img src = "../images/{{icons.[focus]}}"height = "50vh"> : Convert screenshots to text</li>
+					<li><img src = "../images/{{icons.[textSize]}}"height = "50vh"> : Adjust the size of the reading text</li>
+
+				</ul>			
+			</div>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="card-header" id="headingThree">
+			<h5 class="mb-0">
+				<button class="btn btn-link help" type="button" data-toggle="collapse"  aria-expanded="true" aria-controls="collapseOne">
+				<i>3. Enjoy your read!</i>
+				</button>
+			</h5>
+			</div>
+
+		</div>
+
 	</div>
 </body>
 </html>

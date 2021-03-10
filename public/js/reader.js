@@ -23,9 +23,11 @@ function initializePage() {
 
 function addContent(){
   var wc = getWordCount(localStorage.getItem("textContent"));
+  var wpp = localStorage.getItem("wpp");
+  console.log("words per page:"+ wpp);
   console.log("this many words:" + wc);
   
-  splitIntoPages(localStorage.getItem("textContent"), wc, 250);
+  splitIntoPages(localStorage.getItem("textContent"), wc, wpp);
   let firstPg = pages[currentPg].join(' ');
   setHighlightSpeed(getWordCount(firstPg));
   $("#readText").html(firstPg);
