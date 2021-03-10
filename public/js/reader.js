@@ -2,7 +2,7 @@
 var pages = [];
 var currentPg = 0;
 var totalPg = 0;
-
+var wpp = 500;
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
@@ -18,7 +18,9 @@ function initializePage() {
     $("#pageR").click(NextPg);
     $("#pageL").click(PrevPg);
     let el = document.getElementById("High");
+    wpp = localStorage.getItem("wpp");
     addContent();
+    
 }
 
 function addContent(){
@@ -27,7 +29,7 @@ function addContent(){
   // console.log("words per page:"+ wpp);
   console.log("this many words:" + wc);
   
-  splitIntoPages(localStorage.getItem("textContent"), wc, 250);
+  splitIntoPages(localStorage.getItem("textContent"), wc, wpp);
   let firstPg = pages[currentPg].join(' ');
   setHighlightSpeed(getWordCount(firstPg));
   $("#readText").html(firstPg);
