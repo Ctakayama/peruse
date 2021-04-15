@@ -1,4 +1,34 @@
-repo
+**Peruse**
 ====
+**Peruse** is an e-reader web app that lets you stay focused while you read online.
 
-Project Description
+[Live Demo](https://peruse-reader.herokuapp.com/) 
+
+## Features
+Peruse creates a distraction-free environement that makes reading online efficient.
+
+There are 3 ways to read text using Peruse:
+1. *Upload Text* - load a .txt file from your device
+2. *Paste Text* - load text from your device's clipboard
+3. *Image to Text* - load a screenshot from your device which Peruse will translate into readable text.
+
+In Peruse, users can augment the text they're reading to improve their focus:
+* *guided reading* - text begins to highlight itself to keep reader's attention.
+* *dark mode* - adjust text and background to reduce eye strain
+* *focus mode* - brings Peruse full screen to remove distracting tabs and external interfaces
+* *text size* - adjust text size to increase readability
+
+
+## Local Setup
+use the package manager [npm](https://www.npmjs.com/get-npm) to install required dependencies:
+```bash
+npm install
+```
+then build the project:
+```bash
+npm build
+```
+and run the project locally:
+```bash
+node app.js
+```
