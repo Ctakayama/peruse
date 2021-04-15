@@ -18,6 +18,8 @@ In Peruse, users can augment the text they're reading to improve their focus:
 * *focus mode* - brings Peruse full screen to remove distracting tabs and external interfaces
 * *text size* - adjust text size to increase readability
 
+## Technologies Used
+javascript, express/node.js, npm, handlebars.js, ocrad.js, html, css, 
 
 ## Local Setup
 use the package manager [npm](https://www.npmjs.com/get-npm) to install required dependencies:
