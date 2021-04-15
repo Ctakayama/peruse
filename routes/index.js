@@ -6,26 +6,22 @@ const { request } = require('express');
 var data = require('../data.json');
 
 exports.view = function(req, res){
-  res.render('index', data);
+  res.render('home', data);
 };
 
 exports.viewHome = function(req, res){
   res.render('home', data);
 };
 
-exports.viewHomeWName = function(req, res){
-  newUser = {
-    "name":req.params.name
-  };
+// exports.viewHomeWName = function(req, res){
+//   newUser = {
+//     "name":req.params.name
+//   };
   
-  data.user.pop();
-  data.user.push(newUser);
-  res.render('home', data);
-};
-
-exports.viewsignUp = function(req, res){
-  res.render('signUp', data);
-};
+//   data.user.pop();
+//   data.user.push(newUser);
+//   res.render('home', data);
+// };
 
 exports.viewSettings = function(req, res){
   res.render('settings', data);
