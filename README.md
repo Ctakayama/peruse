@@ -5,7 +5,7 @@
 [Live Demo](https://peruse-reader.herokuapp.com/) 
 
 ## Features
-Peruse creates a distraction-free environement that makes reading online efficient.
+Peruse creates a distraction-free environment that makes reading online efficient.
 
 There are 3 ways to read text using Peruse:
 1. *Upload Text* - load a .txt file from your device
