@@ -4,6 +4,8 @@
 
 [Live Demo](https://peruse-reader.herokuapp.com/) 
 
+![perusecover](https://user-images.githubusercontent.com/33171566/126246499-255c4e6c-73c7-42b0-a9ce-cf5117e6923e.png)
+
 ## Features
 Peruse creates a distraction-free environment that makes reading online efficient.
 
