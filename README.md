@@ -7,6 +7,8 @@
 ## Features
 Peruse creates a distraction-free environment that makes reading online efficient.
 
+![peruseimg](https://user-images.githubusercontent.com/33171566/126246166-5730e835-6b4c-40c3-9aa4-8d1ff096d276.PNG)
+
 There are 3 ways to read text using Peruse:
 1. *Upload Text* - load a .txt file from your device
 2. *Paste Text* - load text from your device's clipboard
