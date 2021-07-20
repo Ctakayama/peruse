@@ -15,12 +15,13 @@ There are 3 ways to read text using Peruse:
 3. *Image to Text* - load a screenshot from your device which Peruse will translate into readable text.
 
 In Peruse, users can augment the text they're reading to improve their focus:
+
+![peruseimg](https://user-images.githubusercontent.com/33171566/126246166-5730e835-6b4c-40c3-9aa4-8d1ff096d276.PNG)
+
 * *guided reading* - text begins to highlight itself to keep reader's attention.
 * *dark mode* - adjust text and background to reduce eye strain
 * *focus mode* - brings Peruse full screen to remove distracting tabs and external interfaces
 * *text size* - adjust text size to increase readability
-
-![peruseimg](https://user-images.githubusercontent.com/33171566/126246166-5730e835-6b4c-40c3-9aa4-8d1ff096d276.PNG)
 
 ## Technologies Used
 javascript, express/node.js, npm, handlebars.js, ocrad.js, html, css, 
